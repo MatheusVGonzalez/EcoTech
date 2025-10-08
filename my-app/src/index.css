@@ -11,3 +11,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* EcoTech theme (simple, junior-friendly) */
+:root {
+  --eco: #2bb673;
+  --eco-2: #77e09f;
+}
+.text-eco { color: var(--eco) !important; }
+.bg-eco { background-color: var(--eco) !important; }
+.gradient-eco { background: linear-gradient(135deg, var(--eco), var(--eco-2)); }
+.hero-illustration { max-width: 320px; height: auto; }
+.legend { display:inline-block; width:10px; height:10px; border-radius:2px; margin-right:6px; }
+.legend.solar { background:#2bb673; }
+.legend.wind { background:#77e09f; }
+.legend.grid { background:#b8f3cf; }
