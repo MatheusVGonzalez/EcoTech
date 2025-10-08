@@ -51,8 +51,6 @@ function Hero() {
 function Features() {
   const items = [
     { title: 'Solar', text: 'Basic photovoltaic solutions.' },
-    { title: 'Wind', text: 'Simple wind integration.' },
-    { title: 'Smart Grid', text: 'Intro to smart metering.' },
   ];
   return (
     <section className="py-5">
