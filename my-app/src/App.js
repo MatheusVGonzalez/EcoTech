@@ -28,9 +28,9 @@ function Hero() {
       <div className="hero-overlay">
         <div className="container">
           <div className="col-12 col-lg-8">
-            <h1 className="hero-title">Solar Energy, The Smart Way To Power Your Home</h1>
+            <h1 className="hero-title">Solar Energy, Save Energy</h1>
             <p className="mt-3 hero-text">
-              Growing our position as an international renewable energy provider through flexible, integrated solar and wind solutions.
+              Showing you that solar energy is simpler than it seems.
             </p>
             <div className="hero-actions mt-4">
               <button className="btn btn-eco btn-lg">Our Services</button>

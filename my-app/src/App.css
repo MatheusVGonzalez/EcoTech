@@ -1,25 +1,19 @@
-/* Basic, junior-friendly styles for topbar + hero */
 .topbar { background:#fff; border-bottom:1px solid #e9ecef; }
 .topbar .brand { display:flex; align-items:center; gap:8px; font-weight:600; color:#2bb673; text-decoration:none; }
 .topbar .nav-links a { color:#333; text-decoration:none; margin:0 8px; }
 .topbar .nav-links a:hover { color:#2bb673; }
-
 .hero-banner { position:relative; min-height:480px; background:#0b3d2b; color:#fff; }
 .hero-banner::before {
   content:"";
   position:absolute; inset:0;
-  background-image:url('https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=1600&auto=format&fit=crop');
+  background-image:url('../images/download.jpg');
   background-size:cover; background-position:center; opacity:0.55;
 }
 .hero-overlay { position:relative; padding:80px 0; }
 .hero-title { font-size:44px; font-weight:800; line-height:1.1; }
 .hero-text { max-width:560px; color:#eaf7ef; }
 .hero-actions .btn { margin-right:12px; }
-
-/* Simple button tweaks */
 .btn-eco { background:#2bb673; color:#fff; border:none; }
 .btn-eco:hover { background:#259d64; color:#fff; }
-
-/* Simple indicators */
 .indicator { display:inline-block; width:9px; height:9px; border-radius:50%; background:#eaeaea; margin-right:8px; }
 .indicator.active { background:#2bb673; }
