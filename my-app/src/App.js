@@ -1,34 +1,37 @@
 import './App.css';
 import emailjs from '@emailjs/browser';
+import { Routes, Route, Link } from 'react-router-dom';
+import Products from './Products';
 
-function Topbar() {
+function Bar() {
   return (
   <nav className="navbar navbar-expand-lg navbar-light topbar">
       <div className="container py-2">
-        <a className="navbar-brand brand" href="#home">EcoTech</a>
+        <Link className="navbar-brand brand" to="/">EcoTech</Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0 nav-links">
-            <li className="nav-item"><a className="nav-link" href="#home">Home</a></li>
-            <li className="nav-item"><a className="nav-link" href="#about">About Us</a></li>
-            <li className="nav-item"><a className="nav-link" href="#services">Services</a></li>
-            <li className="nav-item"><a className="nav-link" href="#projects">Projects</a></li>
-            <li className="nav-item"><a className="nav-link" href="#testimonials">Testimonials</a></li>
-            <li className="nav-item"><a className="nav-link" href="#contact">Contact</a></li>
+            <li className="nav-item"><Link className="nav-link" to="/">Home</Link></li>
+            <li className="nav-item"><a className="nav-link" href="/#about">About Us</a></li>
+            <li className="nav-item"><a className="nav-link" href="/#services">Services</a></li>
+            <li className="nav-item"><a className="nav-link" href="/#projects">Projects</a></li>
+            <li className="nav-item"><a className="nav-link" href="/#testimonials">Testimonials</a></li>
+            <li className="nav-item"><a className="nav-link" href="/#contact">Contact</a></li>
+            <li className="nav-item"><Link className="nav-link" to="/products">Products</Link></li>
           </ul>
-          <button className="btn btn-eco">Get Free Quote</button>
+          <a className="btn btn-eco" href="/#contact">Get Free Quote</a>
         </div>
       </div>
     </nav>
   );
 }
 
-function Hero() {
+function Content() {
   const slides = [
     { src: '/download.jpg', title: 'Solar Energy, Save Energy', text: 'Showing you that solar energy is simpler than it seems.' },
-    { src: '/hero-2.svg', title: 'Clean Power For Everyone', text: 'Affordable, sustainable and reliable energy solutions.' },
+    { src: '/img2.png', title: 'Clean Power For Everyone', text: 'Affordable, sustainable and reliable energy solutions.' },
     { src: '/hero-3.svg', title: 'Smarter Grids, Greener Future', text: 'Integrating solar and wind with analytics and IoT.' },
   ];
   return (
@@ -93,7 +96,7 @@ function About() {
   );
 }
 
-function Features() {
+function Feat() {
   const items = [
     { title: 'Solar', text: 'Basic photovoltaic solutions.' },
     { title: 'Wind', text: 'Simple wind integration.' },
@@ -147,7 +150,7 @@ function Projects() {
   );
 }
 
-function Testimonials() {
+function Comments() {
   const quotes = [
     { name: 'Ana', text: 'Equipe excelente e instalação rápida!' },
     { name: 'Carlos', text: 'Conta de luz caiu muito. Recomendo.' },
@@ -173,24 +176,6 @@ function Testimonials() {
     </section>
   );
 }
-
-function CTA() {
-  return (
-    <section id="cta" className="py-5">
-      <div className="container">
-        <div className="bg-eco text-white rounded-4 p-4 d-flex flex-column flex-md-row align-items-center justify-content-between">
-          <div>
-            <h3 className="mb-2">Join the movement</h3>
-            <p className="mb-0">This is a draft. More sections coming next week.</p>
-          </div>
-          <button className="btn btn-light mt-3 mt-md-0 text-eco fw-semibold">Get involved</button>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-
 
 function Contact() {
   const sendEmail = (e) => {
@@ -255,17 +240,27 @@ function Footer() {
   );
 }
 
+function Home() {
+  return (
+    <>
+      <Content />
+      <About />
+      <Feat />
+      <Projects />
+      <Comments />
+      <Contact />
+    </>
+  );
+}
+
 export default function App() {
   return (
     <>
-      <Topbar />
-      <Hero />
-      <About />
-      <Features />
-      <Projects />
-      <Testimonials />
-      <CTA /> 
-      <Contact />
+      <Bar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/products" element={<Products />} />
+      </Routes>
       <Footer />
     </>
   );
