@@ -208,10 +208,10 @@ function Contact() {
         process.env.REACT_APP_EMAILJS_PUBLIC_KEY
       )
       .then(() => {
-        alert('Message sent!');
+        alert('Message sent');
         form.reset();
       })
-      .catch(() => alert('Failed to send. Please try again.'));
+      .catch(() => alert('Failed to send'));
   };
 
   return (
