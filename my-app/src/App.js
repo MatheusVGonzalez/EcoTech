@@ -84,7 +84,7 @@ function About() {
           <div className="col-12 col-md-6">
             <h2 className="fw-bold">About EcoTech</h2>
             <p className="text-muted">About EcoTech
-We offer clean energy solutions focused on solar, wind, and smart grid integration. Our mission is to make renewable energy simple and accessible.</p>
+            We offer clean energy solutions focused on solar, wind, and smart grid integration. Our mission is to make renewable energy simple and accessible.</p>
             <ul className="list-unstyled small text-muted">
               <li>• Custom-built residential and commercial solar power</li>
               <li>• Wind integration and monitoring</li>
