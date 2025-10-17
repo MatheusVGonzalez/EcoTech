@@ -125,7 +125,6 @@ function Feat() {
 }
 
 function Projects() {
-  const cards = Array.from({ length: 6 }).map((_, i) => i + 1);
   const projects = [
     { id: 1, title: 'Solar Installation #1', subtitle: 'Residential • 5kW', img: '/apart.jpg' },
     { id: 2, title: 'Solar Installation #2', subtitle: 'Commercial • 20kW', img: '/apart2.jpg' },
@@ -221,7 +220,7 @@ function Contact() {
         <div className="row g-4">
           <div className="col-12 col-md-6">
             <h2 className="fw-bold">Contact Us</h2>
-            <p className="text-muted small">Send us a message and we’ll get back to you.</p>
+            <p className="text-muted small">Send us a message. Using EmailJS</p>
             <form onSubmit={sendEmail}>
               <div className="mb-3">
                 <label className="form-label">Name</label>
@@ -237,9 +236,6 @@ function Contact() {
               </div>
               <button type="submit" className="btn btn-eco">Send</button>
             </form>
-          </div>
-          <div className="col-12 col-md-6">
-            <div className="map-placeholder"></div>
           </div>
         </div>
       </div>

@@ -8,7 +8,6 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-// Initialize EmailJS once at app startup (uses env var)
 const EMAILJS_PUBLIC_KEY = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
 if (EMAILJS_PUBLIC_KEY) {
   try { emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY }); } catch {}
