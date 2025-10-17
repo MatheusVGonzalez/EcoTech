@@ -32,7 +32,7 @@ function Content() {
   const slides = [
     { src: '/download.jpg', title: 'Solar Energy, Save Energy', text: 'Showing you that solar energy is simpler than it seems.' },
     { src: '/img2.png', title: 'Clean Power For Everyone', text: 'Affordable, sustainable and reliable energy solutions.' },
-    { src: '/hero-3.svg', title: 'Smarter Grids, Greener Future', text: 'Integrating solar and wind with analytics and IoT.' },
+    { src: '/download2.jpg', title: 'Smarter Grids, Greener Future', text: 'Integrating solar and wind with analytics and IoT.' },
   ];
   return (
     <section id="home" className="hero-carousel">
@@ -83,11 +83,12 @@ function About() {
           </div>
           <div className="col-12 col-md-6">
             <h2 className="fw-bold">About EcoTech</h2>
-            <p className="text-muted">We deliver clean energy solutions with a focus on solar, wind, and smart grid integration. Our mission is to make renewable energy simple and accessible.</p>
+            <p className="text-muted">About EcoTech
+We offer clean energy solutions focused on solar, wind, and smart grid integration. Our mission is to make renewable energy simple and accessible.</p>
             <ul className="list-unstyled small text-muted">
-              <li>• Tailored residential and commercial solar</li>
+              <li>• Custom-built residential and commercial solar power</li>
               <li>• Wind integration and monitoring</li>
-              <li>• Smart metering and analytics</li>
+              <li>• Smart measurement and analytics</li>
             </ul>
           </div>
         </div>
@@ -125,6 +126,15 @@ function Feat() {
 
 function Projects() {
   const cards = Array.from({ length: 6 }).map((_, i) => i + 1);
+  const projects = [
+    { id: 1, title: 'Solar Installation #1', subtitle: 'Residential • 5kW', img: '/apart.jpg' },
+    { id: 2, title: 'Solar Installation #2', subtitle: 'Commercial • 20kW', img: '/apart2.jpg' },
+    { id: 3, title: 'Solar Installation #3', subtitle: 'Residential • 6kW', img: '/house.jpg' },
+    { id: 4, title: 'Solar Installation #4', subtitle: 'Residential • 10kW', img: '/house2.jpg' },
+    { id: 5, title: 'Solar Installation #5', subtitle: 'Residential • 12kW', img: '/house3.jpg' },
+    { id: 6, title: 'Solar Installation #6', subtitle: 'Offgrid • 10kW', img: '/offgrind.jpg' },
+  ];
+
   return (
     <section id="projects" className="py-5">
       <div className="container">
@@ -133,13 +143,23 @@ function Projects() {
           <a className="text-eco" href="#projects">View all</a>
         </div>
         <div className="row g-3">
-          {cards.map((n) => (
-            <div key={n} className="col-12 col-md-4">
-              <div className="project-card">
-                <div className="project-thumb"></div>
-                <div className="p-3">
-                  <h6 className="mb-1">Solar Installation #{n}</h6>
-                  <small className="text-muted">Residential • 5kW</small>
+          {projects.map((p) => (
+            <div key={p.id} className="col-12 col-md-4">
+              <div className="card h-100 border-0 shadow-sm">
+                {p.img ? (
+                  <img 
+                    src={p.img} 
+                    alt={p.title} 
+                    className="card-img-top" 
+                    style={{ objectFit: 'cover', height: 180 }}
+                    onError={(e) => { e.currentTarget.onerror = null; e.currentTarget.src = '/project-fallback.svg'; }}
+                  />
+                ) : (
+                  <div className="project-thumb" style={{ height: 180, backgroundColor: '#e9ecef' }}></div>
+                )}
+                <div className="card-body">
+                  <h6 className="card-title mb-1">{p.title}</h6>
+                  <small className="text-muted">{p.subtitle}</small>
                 </div>
               </div>
             </div>
@@ -152,9 +172,9 @@ function Projects() {
 
 function Comments() {
   const quotes = [
-    { name: 'Ana', text: 'Equipe excelente e instalação rápida!' },
-    { name: 'Carlos', text: 'Conta de luz caiu muito. Recomendo.' },
-    { name: 'Julia', text: 'Profissionalismo do começo ao fim.' },
+    { name: 'Ana', text: 'Excellent team and fast installation!' },
+    { name: 'Carlos', text: 'Electricity bill dropped significantly. I recommend it.' },
+    { name: 'Julia', text: 'Professionalism from start to finish.' },
   ];
   return (
     <section id="testimonials" className="py-5 bg-light">
@@ -234,7 +254,7 @@ function Footer() {
         <div className="d-flex align-items-center gap-2">
           <span className="fw-semibold text-eco">EcoTech</span>
         </div>
-        <small className="text-muted">© {new Date().getFullYear()} EcoTech. All rights reserved.</small>
+        <small className="text-muted">© {new Date().getFullYear()} EcoTech</small>
       </div>
     </footer>
   );

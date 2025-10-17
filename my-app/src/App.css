@@ -23,7 +23,13 @@
 .indicator.active { background:#2bb673; }
 
 /* About image placeholder */
-.about-img { width:100%; height:260px; border-radius:16px; background-image:linear-gradient(135deg, #b8f3cf, #77e09f); }
+.about-img { 
+	width:100%; 
+	height:260px; 
+	border-radius:16px; 
+	/* Overlay gradient + image bundled from src/assets */
+	background: linear-gradient(135deg, rgba(184,243,207,0.7), rgba(119,224,159,0.7)), url('./assets/eco3.png') center/cover no-repeat;
+}
 
 /* Projects */
 .project-card { border-radius:12px; overflow:hidden; background:#fff; box-shadow:0 6px 20px rgba(0,0,0,0.06); }
